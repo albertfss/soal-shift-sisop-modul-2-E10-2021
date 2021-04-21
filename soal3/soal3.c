@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void createKiller(int, pid_t*);
+void createKiller(int);
 
 int main(int argc, char** argv) {
     if(argc != 2 || (strcmp(argv[1], "-z") != 0 && strcmp(argv[1], "-x") != 0)) {
@@ -22,7 +22,6 @@ int main(int argc, char** argv) {
     pid_t pid, sid;        // Variabel untuk menyimpan PID
 
     pid = fork();     // Menyimpan PID dari Child Process
-
     /* Keluar saat fork gagal
     * (nilai variabel pid < 0) */
     if (pid < 0) {
@@ -49,7 +48,7 @@ int main(int argc, char** argv) {
     if (strcmp(argv[1], "-x") == 0) {
         flag = 2;
     }
-    createKiller(flag, &sid);
+    createKiller(flag);
 
     close(STDIN_FILENO);
     close(STDOUT_FILENO);
@@ -96,8 +95,9 @@ int main(int argc, char** argv) {
                 }
                 sleep(5);
             }
-            child_id = fork();
+            while(wait(NULL) > 0);
 
+            child_id = fork();
             if(child_id == 0) {
                 char str[80] = "Download Success";
                 char file_name[80];
@@ -118,16 +118,19 @@ int main(int argc, char** argv) {
 
                 strcpy(file_name, buffer);
                 strcat(file_name, ".zip");
-                char *argx[] = {"zip", file_name, "-q", "-m", "-r", buffer, NULL};
+                char *argx[] = {"zip", file_name, "-r", buffer, NULL};
                 execv("/bin/zip", argx);
             }
+            while(wait(NULL) != child_id);
+
+            char *rm[] = {"rm", "-r", buffer, NULL};
+            execv("/bin/rm", rm);
         }
         sleep(40);
     }
-
 }
 
-void createKiller(int flag, pid_t *sid) {
+void createKiller(int flag) {
     FILE *src = fopen("killer.sh", "w");
  
     if (flag == 1) {
@@ -135,7 +138,7 @@ void createKiller(int flag, pid_t *sid) {
         "#!/bin/bash\n"
         "killall -9 ./soal3\n"
         "rm $0\n";
-        fprintf(src, code, sid);
+        fprintf(src, code, NULL);
     }
  
     if (flag == 2) {
@@ -145,6 +148,5 @@ void createKiller(int flag, pid_t *sid) {
         "rm $0\n";
         fprintf(src, code, getpid());
     }
- 
     fclose(src);
 }
