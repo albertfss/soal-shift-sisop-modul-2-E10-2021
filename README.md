@@ -38,7 +38,8 @@ Kelompok E-10
         execv("/bin/mkdir", arg);
     }
     ```
-
+    Folder akan memiliki penamaan dan range waktu berikut
+    ![mkdir](https://i.ibb.co/Z8mjqRH/Screenshot-160.png)
 ## **3B**
 
 - **Soal**
@@ -54,7 +55,7 @@ Kelompok E-10
     "wget", "-q", "-O", path, link, NULL
     ```
     dimana path adalah `namaFolder/namaFile`. Di akhir loop (sebelum masuk ke iterasi selanjutnya), dipanggil fungsi `sleep(5)` agar foto didownload setiap 5 detik. 
-
+    ![downloaded_photo](https://i.ibb.co/2jmg5LT/Screenshot-162.png")
 ## **3C**
 
 - **Soal**
@@ -77,7 +78,7 @@ Kelompok E-10
     while(wait(NULL) != child_id);
     ```
     Setelah proses zip selesai, selanjutnya program akan menjalankan `execv` dengan perintah `rm`.
-
+    ![zip and remove folder](https://i.ibb.co/8BGv5Vw/Screenshot-164.png)
 ## **3D**
 
 - **Soal**
@@ -95,7 +96,7 @@ Kelompok E-10
     fprintf(src, code, NULL);
     ```
     dimana src adalah pointer yang menunjuk ke file killer.sh. 
-
+    ![make killer.sh](https://i.ibb.co/3YGy5by/Screenshot-161.png)
 ## **3E**
 
 - **Soal**
@@ -113,6 +114,7 @@ Kelompok E-10
 
     Jika input sudah sesuai, maka dibuat flag untuk menandai mode yang dimasuki, `1` untuk `-z` dan `2` untuk `-x`. Kemudian dibuat fungsi untuk membuat program killer.sh yang parameter yang menerima flag tersebut. 
     - Jika flag yang adalah 1, maka program akan menulis code di **soal 3D**
+    ![command -z](https://i.ibb.co/QFGVpx8/Screenshot-165.png)
     - Jika flag yang adalah 2, maka program akan menulis code sebagai berikut :
     ```
     char *code = ""
@@ -122,7 +124,7 @@ Kelompok E-10
     fprintf(src, code, getpid());
     ```
     dimana kill getpid() akan menterminasi Process ID yang dimiliki program utama.
-
+    ![command -x](https://i.ibb.co/n8GbZ7n/Screenshot-166.png)
 ## **Kesulitan**
 
 Terdapat bug jika proses remove foldernya digabung dengan zip menggunakan command `zip zipname -r -m path`
