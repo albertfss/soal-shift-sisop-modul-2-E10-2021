@@ -49,9 +49,12 @@ int main()
                 }
             } 
         }
+        
+        
         //1c dan 1d
         else
         {
+            sleep(20);
             child_id4 = fork();
             if(child_id4==0)
             {
