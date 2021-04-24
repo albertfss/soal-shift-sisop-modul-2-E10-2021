@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
+#include <sys/stat.h>
+#include <syslog.h>
 #include <unistd.h>
+#include <string.h>
 #include <wait.h>
 
 int main()
 {
     pid_t child_id, child_idx, child_id2, child_id3;
+    pid_t child_id4, child_id5, child_id6, child_id7;
     int status;
     
     //1a
@@ -44,6 +48,36 @@ int main()
                     execv("/bin/wget", dwnldfilm);
                 }
             } 
+        }
+        //1c dan 1d
+        else
+        {
+            child_id4 = fork();
+            if(child_id4==0)
+            {
+                child_id5 = fork();
+                if(child_id5==0)
+                {
+                    char *unzipmusik[]={"unzip", "-j", "Musik_for_Stevany.zip", "-d", "./Musyik", NULL};
+                    execv("/bin/unzip", unzipmusik);
+                }
+                else
+                {
+                    while ((wait(&status)) > 0);
+                    child_id6 = fork();          
+                    if (child_id6 == 0)
+                    {
+                        char *unzipfoto[]={"unzip", "-j", "Foto_for_Stevany.zip", "-d", "./Pyoto", NULL};
+                        execv("/bin/unzip", unzipfoto);
+                    }
+                    else
+                    {
+                        while ((wait(&status)) > 0);
+                        char *unzipfilm[]={"unzip", "-j", "Film_for_Stevany.zip", "-d", "./Fylm", NULL};
+                        execv("/bin/unzip", unzipfilm);
+                    }
+                }
+            }
         }
     }
 }
