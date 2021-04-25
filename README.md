@@ -9,6 +9,15 @@ Stevany pacar Stevan akan berulang tahun, karena Steven bucin dia ingin memberik
 
 ## **1A**
 Steven ingin membuat folder dimana nama folder-foldernya adalah Musyik untuk mp3, Fylm untuk mp4, dan Pyoto untuk jpg
+...
+ child_id = fork(); 
+        if (child_id == 0)
+        {
+            char *argv[] = {"mkdir","Fylm","Musyik","Pyoto",NULL};
+            execv("/bin/mkdir", argv); 
+        }
+...
+
 
 ## **1B**
 Steven harus mendownload musik, film, dan foto dari link yang sudah disediakan
