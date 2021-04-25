@@ -9,19 +9,18 @@ Stevany pacar Stevan akan berulang tahun, karena Steven bucin dia ingin memberik
 
 ## **1A**
 Steven ingin membuat folder dimana nama folder-foldernya adalah Musyik untuk mp3, Fylm untuk mp4, dan Pyoto untuk jpg
-```
+...
  child_id = fork(); 
         if (child_id == 0)
         {
             char *argv[] = {"mkdir","Fylm","Musyik","Pyoto",NULL};
             execv("/bin/mkdir", argv); 
         }
-```
-Pertama dibuat fork untuk membuat proses yang baru, lalu argv menyimpan perintah membuat folder dan nama folder yang akan dibuat. Selanjutnya perintah dieksekusi dengan ```execv``` 
+...
+
 
 ## **1B**
 Steven harus mendownload musik, film, dan foto dari link yang sudah disediakan
-
 
 ## **1C dan 1D**
 Steven harus meng-extract isi zip dan memindahkannya ke folder yang tadi sudah dibuat sesuai dengan ketentuan
@@ -32,6 +31,10 @@ Untuk memudahkan Steven, ia ingin semua hal di atas berjalan otomatis 6 jam sebe
 ## **1F**
 Setelah itu pada waktu ulang tahunnya Stevany, semua folder akan di zip dengan nama Lopyu_Stevany.zip dan semua folder akan di delete(sehingga hanya menyisakan .zip).
 
+
+## **Screenshot**
+
+![hasil no1](https://i.ibb.co/7W48ytP/hasil-nomor1.png)
 
 # **Soal 2**
 Loba bekerja di sebuah petshop terkenal, suatu saat dia mendapatkan zip yang berisi banyak sekali foto peliharaan dan Ia diperintahkan untuk mengkategorikan foto-foto peliharaan tersebut.
