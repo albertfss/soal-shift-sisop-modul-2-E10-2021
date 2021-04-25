@@ -7,19 +7,19 @@ Kelompok E-10
 # **Soal 1**
 Stevany pacar Stevan akan berulang tahun, karena Steven bucin dia ingin memberikannya hadiah berupa folder yang berisi hal-hal yang disukai wanita malang itu.
 
-##**1A**
+## **1A**
 Steven ingin membuat folder dimana nama folder-foldernya adalah Musyik untuk mp3, Fylm untuk mp4, dan Pyoto untuk jpg
 
-##**1B**
+## **1B**
 Steven harus mendownload musik, film, dan foto dari link yang sudah disediakan
 
-##**1C dan 1D**
+## **1C dan 1D**
 Steven harus meng-extract isi zip dan memindahkannya ke folder yang tadi sudah dibuat sesuai dengan ketentuan
 
-##**1E**
+## **1E**
 Untuk memudahkan Steven, ia ingin semua hal di atas berjalan otomatis 6 jam sebelum waktu ulang tahun Stevany
 
-##**1F**
+## **1F**
 Setelah itu pada waktu ulang tahunnya Stevany, semua folder akan di zip dengan nama Lopyu_Stevany.zip dan semua folder akan di delete(sehingga hanya menyisakan .zip).
 
 
