@@ -9,18 +9,19 @@ Stevany pacar Stevan akan berulang tahun, karena Steven bucin dia ingin memberik
 
 ## **1A**
 Steven ingin membuat folder dimana nama folder-foldernya adalah Musyik untuk mp3, Fylm untuk mp4, dan Pyoto untuk jpg
-...
+```
  child_id = fork(); 
         if (child_id == 0)
         {
             char *argv[] = {"mkdir","Fylm","Musyik","Pyoto",NULL};
             execv("/bin/mkdir", argv); 
         }
-...
-
+```
+Pertama dibuat fork untuk membuat proses yang baru, lalu argv menyimpan perintah membuat folder dan nama folder yang akan dibuat. Selanjutnya perintah dieksekusi dengan ```execv``` 
 
 ## **1B**
 Steven harus mendownload musik, film, dan foto dari link yang sudah disediakan
+
 
 ## **1C dan 1D**
 Steven harus meng-extract isi zip dan memindahkannya ke folder yang tadi sudah dibuat sesuai dengan ketentuan
