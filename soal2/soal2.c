@@ -66,7 +66,7 @@ void order() {
                     			char copy1[100], copy2[100], copy3[100];
                     			char base2[100], base3[100];
                     
-                    			for(flag1=strtok_r(namabaru,"_",&flag3); flag1!=NULL; flag1=strtok_r(NULL,"_",&flag3))
+                    			for(flag1=strtok_r(newName,"_",&flag3); flag1!=NULL; flag1=strtok_r(NULL,"_",&flag3))
                     			{
                         			char hewan[100], nama[100], umur[100];
                         			int i=0;
@@ -80,9 +80,9 @@ void order() {
 
                         			for(flag2=strtok_r(flag1,";",&flag4); flag2!=NULL; flag2=strtok_r(NULL,";",&flag4))
                             			{
-                                			if(i==0) strcpy(hewan,temp2);
-                                			if(i==1) strcpy(nama,temp2);
-                                			if(i==2) strcpy(umur,temp2);
+                                			if(i==0) strcpy(hewan,flag2);
+                                			if(i==1) strcpy(nama,flag2);
+                                			if(i==2) strcpy(umur,flag2);
                                 			i=i+1;
                             			}
                         
@@ -170,7 +170,7 @@ void extract() {
 			struct dirent *folder;
 			while((folder = readdir(directory)) != NULL) {
 				if(strcmp(folder->d_name, ".") != 0 && strcmp(folder->d_name, "..") !=0) {
-					if(infolder->d_type == DT_DIR) {
+					if(folder->d_type == DT_DIR) {
 						char awal[100] = "home/ahmad/modul2/petshop";
 						strcat(base, folder->d_name);
                         			char *listPets[] = {"rm", "-r", "-f", base, NULL};
