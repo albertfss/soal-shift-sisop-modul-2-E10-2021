@@ -21,6 +21,24 @@ Steven ingin membuat folder dimana nama folder-foldernya adalah Musyik untuk mp3
 
 ## **1B**
 Steven harus mendownload musik, film, dan foto dari link yang sudah disediakan
+```
+ child_id2 = fork();
+        if (child_id2 == 0)
+        {
+            char *dwnldmusik[] = { "wget", "-q","--no-check-certificate","https://drive.google.com/uc?id=1ZG8nRBRPquhYXq_sISdsVcXx5VdEgi-J&export=download", "-O","Musik_for_Stevany.zip",NULL};
+            execv("/bin/wget", dwnldmusik);
+        }
+ 
+        while ((wait(NULL)) > 0);
+        child_id3 = fork();          
+        if (child_id3 == 0)
+        {
+            char *dwnldfoto[]=  { "wget", "-q","--no-check-certificate","https://drive.google.com/uc?id=1FsrAzb9B5ixooGUs0dGiBr-rC7TS9wTD&export=download", "-O","Foto_for_Stevany.zip",NULL};
+            execv("/bin/wget", dwnldfoto);   
+        }
+ ```
+ Disini kita buat fork baru lagi untuk menjalankan proses selanjutnya. Fork pertama akan didownload zip yang berisi Musik dari link yang sudah ada. ```wget``` merupakan perintah nya. 
+ ```  while ((wait(NULL)) > 0);```, bagian ini bertujuan untuk menunggu proses yang dilakukan sebleumnya, setelah selesai akan dilanjutkan ke proses selanjutnya yaitu mendownload zip Foto_for_stevany.
 
 ## **1C dan 1D**
 Steven harus meng-extract isi zip dan memindahkannya ke folder yang tadi sudah dibuat sesuai dengan ketentuan
