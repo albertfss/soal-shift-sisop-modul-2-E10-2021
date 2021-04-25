@@ -288,6 +288,9 @@ String txtpath berguna untuk menyimpan alamat keterangan.txt. Selain itu, string
                     			execute("/bin/remove",argv4);
                 		}
 ```
+## **Kesulitan**
+Terdapat kendala pada compiler sehingga sempat bingung program tidak berjalan karena compiler atau error.Lalu, fungsi yang digunakan sebagian besar merupakan fungsi yang tidak ada dimodul/belum pernah dicoba sehingga kebingunan fungsi mana yang harus digunakan.
+
 # **Soal 3**
 
 ## **3A**
