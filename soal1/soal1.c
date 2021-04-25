@@ -6,14 +6,50 @@
 #include <unistd.h>
 #include <string.h>
 #include <wait.h>
+#include <time.h>
 
 int main()
 {
+    pid_t pid, sid; // Variabel untuk menyimpan PID   
     pid_t child_id, child_idx, child_id2, child_id3;
-    pid_t child_id4, child_id5, child_id6, child_id7;
-    int status;
+    pid_t child_id4, child_id5, child_id6, child_pid;
     
-    //1a
+    int status;
+    pid = fork();// Menyimpan PID dari Child Process
+    
+    /* Keluar saat fork gagal (nilai variabel pid < 0) */
+    if (pid < 0) {
+        exit(EXIT_FAILURE);
+    }
+
+    /* Keluar saat fork berhasil (nilai variabel pid adalah PID dari child process) */
+    if (pid > 0) {
+        exit(EXIT_SUCCESS);
+    }
+
+    umask(0);
+
+    sid = setsid();
+    if (sid < 0) {
+        exit(EXIT_FAILURE);
+    }
+
+    if ((chdir("/")) < 0) {
+        exit(EXIT_FAILURE);
+    }
+
+    close(STDIN_FILENO);
+    close(STDOUT_FILENO);
+    close(STDERR_FILENO);
+
+    while (1)
+    {
+	time_t rawtime = time(NULL);
+	struct tm info = *localtime(&rawtime);
+ 	if(info.tm_mday == 9 & info.tm_mon + 1 == 4 && 22 - info.tm_hour == 6 && 
+        info.tm_min == 22 && info.tm_sec <= 2)
+	{
+		//1a
     child_id = fork();
     if (child_id == 0)
     {
@@ -82,5 +118,24 @@ int main()
                 }
             }
         }
+	}
+	}
+	if(info.tm_mday == 9 & info.tm_mon + 1 == 4 && 22 - info.tm_hour == 0 && 
+        info.tm_min == 22 && info.tm_sec <= 2)
+	{
+		child_pid = fork();
+        if (child_pid == 0)
+        {
+            char *ZIP[]= {"zip","-r","Lopyu_Stevany.zip","Fylm","Musyik","Pyoto",NULL};
+            execv("/bin/zip", ZIP);
+        }
+		else
+		{
+			while ((wait(&status)) > 0);
+            char *delete[]={"rm", "-r", "Fylm", "Musyik", "Pyoto", NULL};
+            execv("/bin/rm", delete);
+		}
+	}
+    sleep(30);
     }
 }
