@@ -60,7 +60,7 @@ void order() {
                 		if(folder->d_type == DT_REG)
                 		{
                     			char *flag1,*flag2,*flag3,*flag4;
-                    			char *fileName=dr->d_name;
+                    			char *fileName=folder->d_name;
                     			char *newName=cutName(fileName);
                     
                     			char copy1[100], copy2[100], copy3[100];
@@ -159,7 +159,7 @@ void extract() {
 	}	
 
 	if(child == 0) {
-		char *argv[] = {"mkdir","-p","home/ahmad/Downloads/pets.zip",NULL};
+		char *argv[] = {"mkdir","-p","home/ahmad/modul2/petshop",NULL};
 		execute("/bin/mkdir", argv);
 		
 		char *argv2[] = {"unzip", "-q", "-d", "home/ahmad/modul2/petshop", "/home/ahmad/Downloads/pets.zip", NULL};
