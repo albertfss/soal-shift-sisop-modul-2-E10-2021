@@ -24,6 +24,13 @@ Setelah itu pada waktu ulang tahunnya Stevany, semua folder akan di zip dengan n
 
 
 # **Soal 2**
+Loba bekerja di sebuah petshop terkenal, suatu saat dia mendapatkan zip yang berisi banyak sekali foto peliharaan dan Ia diperintahkan untuk mengkategorikan foto-foto peliharaan tersebut.
+## **2A**
+
+- **Soal**
+  Pertama-tama program perlu mengextract zip yang diberikan ke dalam folder “/home/[user]/modul2/petshop”. program harus bisa membedakan file dan folder sehingga dapat memproses file yang seharusnya dikerjakan dan menghapus folder-folder yang tidak dibutuhkan.
+- **Penyelsaian**
+
 
 # **Soal 3**
 
