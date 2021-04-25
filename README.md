@@ -60,7 +60,8 @@ Loba bekerja di sebuah petshop terkenal, suatu saat dia mendapatkan zip yang ber
 ## **2A**
 
 - **Soal**
-  Pertama-tama program perlu mengextract zip yang diberikan ke dalam folder “/home/[user]/modul2/petshop”. program harus bisa membedakan file dan folder sehingga dapat memproses file yang seharusnya dikerjakan dan menghapus folder-folder yang tidak dibutuhkan.
+
+	Pertama-tama program perlu mengextract zip yang diberikan ke dalam folder “/home/[user]/modul2/petshop”. program harus bisa membedakan file dan folder sehingga dapat memproses file yang seharusnya dikerjakan dan menghapus folder-folder yang tidak dibutuhkan.
 - **Penyelsaian**
 ```
 void extract() {
@@ -110,7 +111,8 @@ Fungsi ```extract``` berfungsi untuk membuat directory yang diinginkan, lalu men
 ## **2B**
 
 - **Soal**
-Foto peliharaan perlu dikategorikan sesuai jenis peliharaan. program harus membuatkan folder-folder yang dibutuhkan sesuai dengan isi zip.
+
+	Foto peliharaan perlu dikategorikan sesuai jenis peliharaan. program harus membuatkan folder-folder yang dibutuhkan sesuai dengan isi zip.
 - **Penyelesaian**
 ```
 void order() {
@@ -173,7 +175,8 @@ Dengan menggunakan fungsi bawaan c dirent.h, kita dapat menggunakan DIR untuk me
 ## **2C**
 
 - **Soal**
-Setelah folder kategori berhasil dibuat, programm harus memindahkan foto ke folder dengan kategori yang sesuai dan di rename dengan nama peliharaan.
+
+	Setelah folder kategori berhasil dibuat, programm harus memindahkan foto ke folder dengan kategori yang sesuai dan di rename dengan nama peliharaan.
 - **Penyelesaian**
 ```
 //2c
@@ -210,7 +213,8 @@ Disini gabungkan string yang diambil dengan jpg karena pada fungsi sebelumya ter
 ## **2D**
 
 - **Soal**
-Karena dalam satu foto bisa terdapat lebih dari satu peliharaan maka foto harus di pindah ke masing-masing kategori yang sesuai. 
+
+	Karena dalam satu foto bisa terdapat lebih dari satu peliharaan maka foto harus di pindah ke masing-masing kategori yang sesuai. 
 - **Penyelesaian**
 ```
 if(folder->d_type == DT_REG)
@@ -247,7 +251,8 @@ Loop pertama digunakan untuk memotong nama file string apabila bertemu dengan _ 
 ## **2E**
 
 - **Soal**
-Di setiap folder buatlah sebuah file "keterangan.txt" yang berisi nama dan umur semua peliharaan dalam folder tersebut.
+
+	Di setiap folder buatlah sebuah file "keterangan.txt" yang berisi nama dan umur semua peliharaan dalam folder tersebut.
 - **Penyelesaian**
 ```
                            /2e flag
