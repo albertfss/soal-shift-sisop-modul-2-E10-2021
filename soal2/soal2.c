@@ -172,15 +172,15 @@ void extract() {
 				if(strcmp(folder->d_name, ".") != 0 && strcmp(folder->d_name, "..") !=0) {
 					if(folder->d_type == DT_DIR) {
 						char awal[100] = "home/ahmad/modul2/petshop";
-						strcat(base, folder->d_name);
-                        			char *listPets[] = {"rm", "-r", "-f", base, NULL};
+						strcat(awal, folder->d_name);
+                        			char *listPets[] = {"rm", "-r", "-f", awal, NULL};
                        				execute("/bin/rm", listPets);
 					}
 				}			
 			}
 		}
 		
-		closedir(directory)	
+		closedir(directory);	
 	}
 	
 	else {
