@@ -67,7 +67,7 @@ Steven harus meng-extract isi zip dan memindahkannya ke folder yang tadi sudah d
             execv("/bin/unzip", unzipfilm);
         }
 ```
-Pertama dibuat fork dulu untuk proses baru. ``` char *unzipmusik[]={"unzip", "-j", "Musik_for_Stevany.zip", "-d", "./Musyik", NULL};``` Kita membuat array yang menyimpan perinitah untuk unzip/extract files. Tag ```-j``` digunakan agar tidak dibuat file baru. Disini yang di extract adalah **Musik_for_Stevany.zip** selanjutnya ada ``` "-d", "./Musyik"``` yang gunanya kita akan memindahkan hasil extract tersebut ke folder Musyik.
+Pertama dibuat fork dulu untuk proses baru. ``` char *unzipmusik[]={"unzip", "-j", "Musik_for_Stevany.zip", "-d", "./Musyik", NULL};``` Kita membuat array yang menyimpan perinitah untuk unzip/extract files. Tag ```-j``` digunakan agar tidak dibuat file baru. Disini yang di extract adalah **Musik_for_Stevany.zip** selanjutnya ada ``` "-d", "./Musyik"``` yang gunanya kita akan memindahkan hasil extract tersebut ke folder Musyik. Kemudian array tersebut dieksekusi dengan perintah ```execv```
 Seetelah proses extract dan memindahkan musik, dibuat lagi fork baru untuk unzip dan memindahkan foto dan film
 
 ## **1E**
