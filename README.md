@@ -43,6 +43,32 @@ Steven harus mendownload musik, film, dan foto dari link yang sudah disediakan
 
 ## **1C dan 1D**
 Steven harus meng-extract isi zip dan memindahkannya ke folder yang tadi sudah dibuat sesuai dengan ketentuan
+```
+ while(wait(NULL) > 0);
+        child_id5 = fork();
+        if(child_id5==0)
+        {
+            char *unzipmusik[]={"unzip", "-j", "Musik_for_Stevany.zip", "-d", "./Musyik", NULL};
+            execv("/bin/unzip", unzipmusik);
+        }
+ 
+        while ((wait(NULL)) > 0);
+        child_id6 = fork();          
+        if (child_id6 == 0)
+        {
+            char *unzipfoto[]={"unzip", "-j", "Foto_for_Stevany.zip", "-d", "./Pyoto", NULL};
+            execv("/bin/unzip", unzipfoto);
+        }
+        child_id4 = fork();
+        if(child_id4==0)
+        {
+            while ((wait(&status)) > 0);
+            char *unzipfilm[]={"unzip", "-j", "Film_for_Stevany.zip", "-d", "./Fylm", NULL};
+            execv("/bin/unzip", unzipfilm);
+        }
+```
+Pertama dibuat fork dulu untuk proses baru. ``` char *unzipmusik[]={"unzip", "-j", "Musik_for_Stevany.zip", "-d", "./Musyik", NULL};``` Kita membuat array yang menyimpan perinitah untuk unzip/extract files. Tag ```-j``` digunakan agar tidak dibuat file baru. Disini yang di extract adalah **Musik_for_Stevany.zip** selanjutnya ada ``` "-d", "./Musyik"``` yang gunanya kita akan memindahkan hasil extract tersebut ke folder Musyik.
+Seetelah proses extract dan memindahkan musik, dibuat lagi fork baru untuk unzip dan memindahkan foto dan film
 
 ## **1E**
 Untuk memudahkan Steven, ia ingin semua hal di atas berjalan otomatis 6 jam sebelum waktu ulang tahun Stevany
