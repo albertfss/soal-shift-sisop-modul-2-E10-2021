@@ -75,7 +75,29 @@ Untuk memudahkan Steven, ia ingin semua hal di atas berjalan otomatis 6 jam sebe
 
 ## **1F**
 Setelah itu pada waktu ulang tahunnya Stevany, semua folder akan di zip dengan nama Lopyu_Stevany.zip dan semua folder akan di delete(sehingga hanya menyisakan .zip).
-
+```
+if(info.tm_mday == 9 & info.tm_mon + 1 == 4 && 22 - info.tm_hour == 0 && 
+        info.tm_min == 22 && executed == 1)
+    {
+        child_pid = fork();
+        if (child_pid == 0)
+        {
+            char *ZIP[]= {"zip","-r","Lopyu_Stevany.zip","Fylm","Musyik","Pyoto",NULL};
+            execv("/bin/zip", ZIP);
+        }
+        while ((wait(NULL)) > 0);
+        child_pid = fork();
+        if (child_pid == 0)
+        {
+            char *delete[]={"rm", "-r", "Fylm", "Musyik", "Pyoto", NULL};
+            execv("/bin/rm", delete);
+        }
+    }
+ ```
+ Bagian ```if``` berfungsi untuk memberikan kondisi kode di bawah nya akan dijalankan, yaitu pada 9 April pukul 22.22 WIB.
+ Selanjutnya dibuat fork untuk proses zip. ```char *ZIP[]= {"zip","-r","Lopyu_Stevany.zip","Fylm","Musyik","Pyoto",NULL}```. Array ini menyimpan perintah untuk membuat satu folder zip dengan nama **Lopyu_Stevany.zip** dimana zip tersebut berisi folder Fylm, Musyik, dan Pyoto. Selanjutnya dieksekusi dengan perintah ```exec```.
+ Selanjutnya, ada folder yang harus dihapus. Dengan membuat ``` char *delete[]={"rm", "-r", "Fylm", "Musyik", "Pyoto", NULL};``` kita akan menghapus folder Fylm, Musyik, Pyoto dan mengeksekusinya dengan ```execv("/bin/rm", delete);```.
+ 
 
 ## **Screenshot**
 
