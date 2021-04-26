@@ -319,6 +319,11 @@ Setelah serangkaian proses dijalankan hal yang terakhir dilakukan adalah menghap
 ## **Kesulitan**
 Terdapat kendala pada compiler sehingga sempat bingung program tidak berjalan karena compiler atau error.Lalu, fungsi yang digunakan sebagian besar merupakan fungsi yang tidak ada dimodul/belum pernah dicoba sehingga kebingunan fungsi mana yang harus digunakan.
 
+## **Screenshot**
+
+![Hasil no 2](https://raw.githubusercontent.com/albertfss/soal-shift-sisop-modul-2-E10-2021/main/Screenshot%20from%202021-04-26%2021-27-55.png)
+
+
 # **Soal 3**
 
 ## **3A**
