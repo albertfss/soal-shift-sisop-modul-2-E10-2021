@@ -109,7 +109,7 @@ Loba bekerja di sebuah petshop terkenal, suatu saat dia mendapatkan zip yang ber
 
 - **Soal**
 	Pertama-tama program perlu mengextract zip yang diberikan ke dalam folder “/home/[user]/modul2/petshop”. program harus bisa membedakan file dan folder sehingga dapat memproses file yang seharusnya dikerjakan dan menghapus folder-folder yang tidak dibutuhkan.
-- **Penyelsaian**
+- **Penyelesaian**
 ```
 int main() {
 	pid_t child;
@@ -321,8 +321,9 @@ Terdapat kendala pada compiler sehingga sempat bingung program tidak berjalan ka
 
 ## **Screenshot**
 
-![Hasil no 2](https://raw.githubusercontent.com/albertfss/soal-shift-sisop-modul-2-E10-2021/main/Screenshot%20from%202021-04-26%2021-27-55.png)
-
+![Hasil no 2a](https://raw.githubusercontent.com/albertfss/soal-shift-sisop-modul-2-E10-2021/main/Screenshot%20from%202021-04-26%2021-27-55.png)
+![Hasil no 2b](https://raw.githubusercontent.com/albertfss/soal-shift-sisop-modul-2-E10-2021/main/Screenshot%20from%202021-04-26%2021-28-01.png)
+![Hasil no 2c](https://raw.githubusercontent.com/albertfss/soal-shift-sisop-modul-2-E10-2021/main/Screenshot%20from%202021-04-26%2021-28-06.png)
 
 # **Soal 3**
 
